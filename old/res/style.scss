@@ -1,0 +1,193 @@
+body {
+  font-family: "PT Sans", Arial, sans-serif; // Body font
+  color: #212121;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  // CSS Variables
+  --header-height: 72px;
+}
+h1, h2, h3, h4, h5, h6 {
+   font-family: "PT Sans", Arial, sans-serif; // Header font
+}
+#header {
+  position: fixed;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background: #FFF;
+  width: 100%;
+  height: var(--header-height);
+  border-bottom: 1px solid #CCC;
+}
+#brand {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 10px;
+  a {
+     display: flex;
+     text-decoration: none;
+     color: inherit;
+ }
+  h1 {
+     &::before {
+        @extend .shadow-1;
+        content: "";
+        display: inline-block;
+        width: 56px;
+        height: 64px;
+        background-color: #304FFE;
+        margin-top: 7px;
+        margin-right: -48px;
+     }
+    max-width: 380px;
+    height: 100%;
+    margin: 0;
+    font-size: 48px;
+    font-weight: bold;
+    line-height: var(--header-height);
+    padding-left: 10px;
+    flex-shrink: 0;
+    transition: max-width 0.25s ease-in-out;
+    white-space: pre;
+    overflow: hidden;
+    text-overflow: clip;
+  }
+}
+#nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 10px;
+  a {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    vertical-align: middle;
+    padding: 0 10px;
+    text-decoration: none;
+    color: inherit;
+    height: calc(var(--header-height) + 10px);
+    background-color: #FFF;
+    transform: translate3d(0, -10px, 0);
+    border-bottom: 1px solid #CCC;
+    transition: background-color 0.25s ease, transform 0.25s ease, line-height 0.15s ease-out;
+    &:hover {
+      background-color: #DFDFDF;
+      transform: translate3d(0, -6px, 0);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    }
+  }
+}
+#splash {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   height: 100vh;
+   background-image: url("img/bg.png");
+   p {
+      font-size: 36px;
+   }
+}
+#content {
+   display: flex;
+   flex-flow: column nowrap;
+   width: 100%;
+   .row {
+      display: flex;
+      flex-direction: row;
+      width: 100vw;
+      max-height: 800px;
+      overflow: hidden;
+      &.wrap {
+         flex-wrap: wrap;
+      }
+      &.nowrap {
+         flex-wrap: nowrap;
+      }
+      *, * * {
+         flex-basis: 50%;
+         padding: 20px;
+      }
+      .row-header {
+         flex-basis: 100%;
+         text-align: center;
+      }
+      .column {
+         display: flex;
+         flex-direction: column;
+         height: 100%;
+         overflow: hidden;
+         margin-bottom: 20px;
+         * {
+            padding: 0 20px;
+         }
+      }
+   }
+}
+.shadow-1 {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+}
+.text-shadow {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+}
+@media screen and (max-width: 800px) {
+  #brand {
+    padding: 0;
+    img {
+      transform: scale(0.6);
+    }
+    h1 {
+      max-width: 0;
+      padding: 0;
+    }
+  }
+  #nav {
+    flex-grow: 1;
+    * {
+      flex-grow: 1;
+    }
+    a {
+      flex-flow: column nowrap;
+      &::before {
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        display: inline-block;
+        line-height: 1.1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+        padding: 15px 0;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: 'liga';
+      }
+    }
+    .home::before {
+      content:"home";
+    }
+    .services::before {
+      content:"build";
+    }
+    .team::before {
+      content:"supervisor_account"; // content:"people";
+    }
+    .about::before {
+      content:"info";
+    }
+    .contact::before {
+      content:"mail";
+    }
+  }
+}

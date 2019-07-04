@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'Liquid Amber';
+  src: url('LiquidAmber-Regular.eot?#iefix') format('embedded-opentype'),  url('LiquidAmber-Regular.otf')  format('opentype'),
+	     url('LiquidAmber-Regular.woff') format('woff'), url('LiquidAmber-Regular.ttf')  format('truetype'), url('LiquidAmber-Regular.svg#LiquidAmber-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

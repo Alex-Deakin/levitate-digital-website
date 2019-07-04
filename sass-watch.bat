@@ -1,0 +1,3 @@
+@echo off
+echo Sass watching scss/...
+node-sass -w scss -o css

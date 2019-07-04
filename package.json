@@ -1,0 +1,13 @@
+{
+  "name": "company",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "babel src -d js",
+    "watch": "babel src --watch --out-dir js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5"
+  }
+}
